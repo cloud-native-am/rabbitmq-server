@@ -6,3 +6,13 @@ services:
   ports:
     - "5672:5672"
     - "15672:15672"
+  volumes:
+    - rabbitmq_data:/var/lib/rabbitmq
+  networks:
+    - app-network
+
+networks:
+  app-network:
+    external: true
+volumes:
+  rabbitmq_data:
